@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "CircularInt.hpp"
+
 using namespace std;
 
 CircularInt::CircularInt(int s, int e):_start(s),_end(e),_curr(s){}
