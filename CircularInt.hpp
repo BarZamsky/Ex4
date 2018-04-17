@@ -19,10 +19,8 @@ class CircularInt
     CircularInt& operator++(int);
     CircularInt& operator--(int);
 
-    CircularInt& operator%=(int number);
     void operator==(int number);
     
-
     friend CircularInt operator-(const int num, const CircularInt& c);
     friend CircularInt operator-(const CircularInt& c, const int num);
     friend CircularInt operator-(const CircularInt& c);
