@@ -230,7 +230,7 @@ inline bool operator<=(const CircularInt& c1,const CircularInt& c2)
     return c1<=c2._curr;
 }
 
- inline CircularInt& operator*(CircularInt const &c1,CircularInt const &c2)
+ inline CircularInt& operator*=(CircularInt const &c1,CircularInt const &c2)
  {
      return c1*=c2._curr;
  }
