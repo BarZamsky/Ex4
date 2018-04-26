@@ -67,6 +67,10 @@ CircularInt& CircularInt::operator--(int)
      return *this;
  }
 
+    int CircularInt::operator+=(const int m, const int n)
+    {
+        return m+=n;
+    }
   CircularInt& CircularInt::operator=(const int number)
   { 
       int diff = _start-_end+1;
