@@ -60,3 +60,9 @@ CircularInt& CircularInt::operator--(int)
      *this*=c._curr;
      return *this;
  }
+
+ CircularInt& CircularInt::operator-=(const CircularInt& c)
+ {
+     *this-=c._curr;
+     return *this;
+ }
