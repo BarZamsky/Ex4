@@ -55,8 +55,3 @@ CircularInt& CircularInt::operator--(int)
     return *this-=1;
 }
 
-  bool CircularInt::operator==(int number)
-  {
-      return _curr==number;
-  }
-

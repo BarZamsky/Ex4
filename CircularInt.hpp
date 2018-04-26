@@ -22,12 +22,27 @@ class CircularInt
     CircularInt& operator-=(const int number);
     CircularInt& operator++(int);
     CircularInt& operator--(int);
-    bool operator==(int number);
-
+    
+    friend bool operator>(const CircularInt& c, int number);
+    friend bool operator>(int number,const CircularInt& c);
+    friend bool operator>(const CircularInt& c1,const CircularInt& c2);    
+    friend bool operator<(const CircularInt& c, int number);
+    friend bool operator<(int number,const CircularInt& c);
+    friend bool operator<(const CircularInt& c1,const CircularInt& c2); 
+    friend bool operator>=(const CircularInt& c, int number);
+    friend bool operator>=(int number,const CircularInt& c);
+    friend bool operator>=(const CircularInt& c1,const CircularInt& c2); 
+    friend bool operator<=(const CircularInt& c, int number);
+    friend bool operator<=(int number,const CircularInt& c);
+    friend bool operator<=(const CircularInt& c1,const CircularInt& c2); 
     friend bool operator==(const CircularInt& c, int number);
     friend bool operator==(int number,const CircularInt& c);
     friend bool operator==(const CircularInt& c1,const CircularInt& c2);
+    friend bool operator!=(const CircularInt& c, int number);
+    friend bool operator!=(int number,const CircularInt& c);
+    friend bool operator!=(const CircularInt& c1,const CircularInt& c2);
     friend CircularInt operator/(const CircularInt& c, const int num);
+    friend CircularInt operator/(const int num,const CircularInt& c);
     friend CircularInt operator/(const CircularInt& c1, const CircularInt& c2);
     friend CircularInt operator-(const int num, const CircularInt& c);
     friend CircularInt operator-(const CircularInt& c, const int num);
@@ -40,6 +55,7 @@ class CircularInt
     friend CircularInt operator*(CircularInt const &c1, const int num);
     friend CircularInt operator*(const int num,const CircularInt& c);
     friend ostream& operator<<(ostream& os, const CircularInt& c);
+    
 };
 
 inline CircularInt operator/(const CircularInt& c, const int num)
@@ -52,6 +68,13 @@ inline CircularInt operator/(const CircularInt& c, const int num)
 inline CircularInt operator/(const CircularInt& c1, const CircularInt& c2)
 {
     return c1/c2._curr;
+}
+
+inline CircularInt operator/(const int num,const CircularInt& c)
+{
+    CircularInt temp{c};
+    temp._curr = num/c._curr;
+    return temp;
 }
 
 inline CircularInt operator-(const CircularInt& c, const int num)
@@ -131,4 +154,77 @@ inline bool operator==(int number,const CircularInt& c)
 inline bool operator==(const CircularInt& c1,const CircularInt& c2)
 {
     return c1==c2._curr;
+}
+
+inline bool operator!=(const CircularInt& c, int number)
+{
+    return c._curr != number;
+}
+
+inline bool operator!=(int number,const CircularInt& c)
+{
+    return number != c._curr;
+}
+
+inline bool operator!=(const CircularInt& c1,const CircularInt& c2)
+{
+    return c1!=c2._curr;
+}
+
+inline bool operator>(const CircularInt& c, int number)
+{
+    return c._curr>number;
+}
+
+inline bool operator>(int number,const CircularInt& c)
+{
+    return number>c._curr;
+}   
+
+inline bool operator>(const CircularInt& c1,const CircularInt& c2)
+{
+    return c1>c2._curr;
+}
+inline bool operator<(const CircularInt& c, int number)
+{
+    return c._curr<number;
+}
+
+inline bool operator<(int number,const CircularInt& c)
+{
+    return number<c._curr;
+}
+
+inline bool operator<(const CircularInt& c1,const CircularInt& c2)
+{
+    return c1<c2._curr;
+}
+
+inline bool operator>=(const CircularInt& c, int number)
+{
+       return c._curr>=number;
+}
+
+inline bool operator>=(int number,const CircularInt& c)
+{
+    return number>=c._curr;
+}
+inline bool operator>=(const CircularInt& c1,const CircularInt& c2)
+{
+    return c1>=c2._curr;
+}
+
+inline bool operator<=(const CircularInt& c, int number)
+{
+    return c._curr<=number;
+}
+
+inline bool operator<=(int number,const CircularInt& c)
+{
+    return number<=c._curr;
+}
+
+inline bool operator<=(const CircularInt& c1,const CircularInt& c2)
+{
+    return c1<=c2._curr;
 }
