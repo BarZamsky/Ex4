@@ -66,24 +66,22 @@ CircularInt& CircularInt::operator--(int)
      *this-=c._curr;
      return *this;
  }
-
-    int CircularInt::operator+=(const int m, const int n)
-    {
-        return m+=n;
-    }
+    
   CircularInt& CircularInt::operator=(const int number)
   { 
+      _curr = number;
       int diff = _start-_end+1;
       if(number<_start){
           while(!(number>=_start && number<=_end))
           {
-              number+=diff;
+              *this+=diff;
           }
       }
       else if(number>_end){
           while(!(number>=_start && number<=_end))
           {
-              number-=diff;
+              *this-=diff;
           }
       }
+      return *this;
   }

@@ -17,7 +17,6 @@ class CircularInt
     void setCurr(int c)  {_curr=c;}
 
     CircularInt& operator+=(const int number);
-    int operator+=(const int m, const int n);
     CircularInt& operator*=(const int number);
     CircularInt& operator*=(const CircularInt& c);
     CircularInt& operator/=(const int number);
