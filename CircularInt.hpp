@@ -55,6 +55,7 @@ class CircularInt
     friend CircularInt operator*(CircularInt const &c1, const int num);
     friend CircularInt operator*(const int num,const CircularInt& c);
     friend ostream& operator<<(ostream& os, const CircularInt& c);
+     friend CircularInt& operator*=(CircularInt const &c1,CircularInt const &c2);
     
 };
 
@@ -228,3 +229,8 @@ inline bool operator<=(const CircularInt& c1,const CircularInt& c2)
 {
     return c1<=c2._curr;
 }
+
+ inline CircularInt& operator*(CircularInt const &c1,CircularInt const &c2)
+ {
+     return c1*=c2._curr;
+ }
