@@ -85,3 +85,8 @@ CircularInt& CircularInt::operator--(int)
       }
       return *this;
   }
+
+CircularInt& CircularInt::operator+=(const CircularInt& c)
+{
+    return *this+=c._curr;
+}
