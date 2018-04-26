@@ -45,14 +45,6 @@ CircularInt& CircularInt::operator/=(const int number)
     throw s;
 }
 
-void CircularInt::operator==(int number)
-{
-    int ans = 0;
-    if (_curr == number) ans = 1;
-    if(ans == 1) cout << "The number and the hour are equals!"<< endl;
-    else  cout << "The number and the hour are not equals!"<< endl;
-}
-
 CircularInt& CircularInt::operator++(int)
 {
     return *this+=1;
@@ -63,5 +55,8 @@ CircularInt& CircularInt::operator--(int)
     return *this-=1;
 }
 
-
+  bool CircularInt::operator==(int number)
+  {
+      return _curr==number;
+  }
 
