@@ -72,7 +72,9 @@ inline CircularInt operator/(const CircularInt& c, const int num)
 
 inline CircularInt operator/(const CircularInt& c1, const CircularInt& c2)
 {
-    return c1/c2._curr;
+    CircularInt temp {c1};
+    temp /= c2._curr;
+    return temp;
 }
 
 inline CircularInt operator/(const int num,const CircularInt& c)
