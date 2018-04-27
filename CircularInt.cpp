@@ -23,7 +23,7 @@ CircularInt& CircularInt::operator-=(const int number)
 
 CircularInt& CircularInt::operator*=(const int number)
 {
-    for(int i=1; i<number;i++)
+    for(int i=1; i<=number;i++)
     {
         *this+=_curr;
     }
