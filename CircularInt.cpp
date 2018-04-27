@@ -36,7 +36,7 @@ CircularInt& CircularInt::operator/=(const int number)
     for(int i=_start;i<_end;i++){
         temp = i;
         temp*=number;
-        if(_curr==temp._curr){
+        if(*this==temp){
         *this=i;
         return *this;
         }
