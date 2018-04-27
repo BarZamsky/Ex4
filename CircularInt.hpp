@@ -124,7 +124,7 @@ inline ostream& operator<<(ostream& os,const CircularInt& c)
 
 inline istream& operator>> (istream& is, CircularInt& c)  
 {  
-    is>> c.setStart(c._start)>> c.setEnd(c._end);  
+    is>> c._start>> c._end;  
     return is;  
 }
 
